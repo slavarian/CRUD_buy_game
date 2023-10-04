@@ -1,0 +1,12 @@
+{% block content %}
+  <h1>Покупка игры</h1>
+  <p>Игра: {{ game.name }}</p>
+  <p>Цена: {{ game.price }}</p>
+  <p>Количество товара в наличии: {{ game.quantity }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Подтвердить покупку</button>
+  </form>
+  
+{% endblock %}

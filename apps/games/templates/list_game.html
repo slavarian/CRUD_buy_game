@@ -1,0 +1,19 @@
+
+{% block content %}
+  <h1>Список игр</h1>
+  <ul>
+    {% for game in models %}
+      {% if game.quantity > 0 %}
+        <li>
+          <h2><a href="{% url 'buy_game' game_id=game.id %}">{{ game.name }}</a></h2>
+          <p>Количество товара: {{ game.quantity }}</p>
+          <p>Цена: {{ game.price }}</p>
+          <p>Рейтинг: {{ game.rate }}</p>
+          <img src="{{ game.poster.url }}">
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
